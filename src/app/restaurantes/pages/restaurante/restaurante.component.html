@@ -1,1 +1,36 @@
-<p>restaurante works!</p>
+<ng-template #divLoading>
+    <mat-grid-list cols="1">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-template>
+
+<div *ngIf="restaurante; else divLoading" class="grid p-2">
+    <div *ngFor="let item of restaurante">
+        <mat-card class="col-12 sm:col-6">
+            <mat-card-header>
+                <mat-card-title>{{item.Nombre}}</mat-card-title>
+                <mat-card-subtitle>{{item.Descripcion}}</mat-card-subtitle>
+            </mat-card-header>
+            <img [src]="item | imagen" [alt]="item.Nombre" mat-card-image>
+        </mat-card>
+        <mat-card class="col-12 sm:col-6">
+            <mat-card-header>
+                <mat-card-title>Información</mat-card-title>
+                <mat-card-subtitle>{{item.Nombre}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>{{item.Descripcion}}</mat-list-item>
+                    <mat-list-item>{{item.Direccion}}</mat-list-item>
+                    <mat-list-item>{{item.Email}}</mat-list-item>
+                    <mat-list-item>{{item.Telefono}}</mat-list-item>
+                </mat-list>
+                <button mat-button color="warn" (click)="regresar()">
+                    Regresar
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
