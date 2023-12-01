@@ -10,7 +10,7 @@ import { Restaurantes } from '../../interfaces/restaurantes.interfaces';
   styleUrls: ['./restaurante.component.css']
 })
 export class RestauranteComponent implements OnInit {
-  restaurante!: Restaurantes[];
+  restaurante!: Restaurantes;
   constructor(private activatedRoute:ActivatedRoute,
               private restauranteService: RestaurantesService,
               private router: Router

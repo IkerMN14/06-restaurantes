@@ -11,13 +11,13 @@
         	<a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
             	<!-- El click es para que se cierre -->
             	<mat-icon mat-list-icon>label</mat-icon>
-            	<span>Listado de Heroes</span></a>
+            	<span>Listado de Restaurantes</span></a>
         	<a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
             	<mat-icon mat-list-icon>add</mat-icon>
-            	<span>Añadir Heroe</span></a>
+            	<span>Añadir restaurante</span></a>
         	<a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
             	<mat-icon mat-list-icon>search</mat-icon>
-            	<span>Buscar Heroe</span></a>
+            	<span>Buscar Restaurantes</span></a>
     	</mat-nav-list>
 	</mat-sidenav>
 
@@ -27,7 +27,7 @@
     	</button>
     	<span class="spacer"></span>
     	<!-- Defino esta clase en styles.css, es para que se vea a la derecha.-->
-    	<!-- <span>{{auth.usuario}}</span> -->
+    	 <span>{{auth.usuario}}</span>
     	<button mat-button (click)="logout()">
         	Logout
     	</button>

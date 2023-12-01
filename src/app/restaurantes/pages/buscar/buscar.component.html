@@ -1,1 +1,33 @@
-<p>buscar works!</p>
+<div fxLayout="column">
+    <div>
+        <h1>Buscador de Restaurantes</h1>
+        <mat-divider></mat-divider>
+    </div>
+    <div>
+        <h3>Buscador</h3>
+        <mat-form-field>
+            <mat-label>Empiece a escribir el restaurante</mat-label>
+            <input type="text" placeholder="Pick one" aria-label="Number" matInput [(ngModel)]="termino"
+                [matAutocomplete]="auto" (input)="buscando()">
+            <mat-autocomplete autoActiveFirstOption 
+            #auto="matAutocomplete"
+            (optionSelected)="opcionSeleccionada( $event )">
+                <mat-option *ngFor="let restaurante of restaurantes" [value]="restaurante">
+                    {{restaurante.nombre}}
+                </mat-option>
+                <mat-option *ngIf="restauranteEncontrado">
+                     No se encontro el restaurante {{termino}}
+                  </mat-option>
+    
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+    <div>
+        <pre>{{restauranteSeleccionado | json}}</pre>
+    </div>
+    <div *ngIf="restauranteSeleccionado">
+        <app-restaurante-tarjeta [restaurante]="restauranteSeleccionado"></app-restaurante-tarjeta>
+    </div>
+
+</div>
+

@@ -9,6 +9,8 @@ import { RestaurantesRoutingModule } from './restaurantes-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { RestauranteTarjetaComponent } from './components/restaurante-tarjeta/restaurante-tarjeta.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { FormsModule } from '@angular/forms';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 
 
@@ -22,12 +24,14 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     ListadoComponent,
     RestauranteTarjetaComponent,
     ImagenPipe,
+    ConfirmarComponent,
 
   ],
   imports: [
     CommonModule,
     RestaurantesRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class RestaurantesModule { }
