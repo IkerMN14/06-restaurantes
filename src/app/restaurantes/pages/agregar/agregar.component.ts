@@ -79,7 +79,7 @@ export class AgregarComponent implements OnInit {
           this.restaurantesService.borrarRestaurante(this.restaurante.id!)
             .subscribe(resp => {
               this.mostrarSnackBar('Registro borrado');
-              this.router.navigate(['/heroes']);
+              this.router.navigate(['/restaurantes']);
             })
         }
       }
